@@ -11,18 +11,17 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [lastQuery, setLastQuery] = useState("");
 
-  const booksPerPage = 12; // API default page size is 100, but we'll only show 12
+  const booksPerPage = 12;
 
-  // Fetch books based on query and page
   const fetchBooks = async (query, page) => {
     setLoading(true);
     try {
-      const offset = (page - 1) * booksPerPage; // Offset for paginated results
+      const offset = (page - 1) * booksPerPage;
       const response = await axios.get(
         `https://openlibrary.org/search.json?title=${query}&limit=${booksPerPage}&offset=${offset}`
       );
-      setBooks(response.data.docs); // Update books for the current page
-      setTotalResults(response.data.numFound); // Update the total number of results
+      setBooks(response.data.docs);
+      setTotalResults(response.data.numFound);
     } catch (error) {
       alert("Failed to fetch books. Please try again.");
     } finally {
@@ -30,17 +29,15 @@ const Home = () => {
     }
   };
 
-  // Handle new search
   const searchBooks = ({ title }) => {
-    setLastQuery(title); // Update the latest query
-    setCurrentPage(1); // Reset to the first page
-    fetchBooks(title, 1); // Fetch results for the first page
+    setLastQuery(title); 
+    setCurrentPage(1); 
+    fetchBooks(title, 1);
   };
 
-  // Handle pagination
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    fetchBooks(lastQuery, newPage); // Fetch results for the same query and new page
+    fetchBooks(lastQuery, newPage);
   };
 
   return (
