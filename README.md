@@ -40,7 +40,7 @@ Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/book-finder-app.git
+   git clone https://github.com/kmdurga67/kumari-durga-search-book.git
    cd book-finder-app
 
 2. **Install Dependencies**
@@ -73,7 +73,8 @@ Follow these steps to set up the project locally:
 
 # 📂 Project Structure
 
-- src/
+```bash
+src/
 ├── components/
 │   ├── BookCard.jsx          # Displays individual book details
 │   ├── BookList.jsx          # Displays a grid of books
