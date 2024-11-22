@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import DarkModeToggle from './components/DarkModeToggle';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font-sans min-h-screen flex flex-col bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+      <DarkModeToggle />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
