@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const SearchBar = ({ onSearch }) => {
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,14 +15,14 @@ const SearchBar = ({ onSearch }) => {
     >
       <input
         type="text"
-        placeholder="Search by title"
+        placeholder="Search for a book title..."
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="p-4 border rounded w-full md:w-1/3 text-black text-xl"
+        className="p-4 border rounded-lg w-full md:w-1/3 text-black text-xl shadow-sm focus:ring focus:ring-blue-300"
       />
       <button
         type="submit"
-        className="px-10 py-4 bg-blue-600 text-white rounded hover:bg-blue-700 text-xl"
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition text-xl"
       >
         Search
       </button>

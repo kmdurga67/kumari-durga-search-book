@@ -1,13 +1,17 @@
-import React from 'react';
-import BookCard from './BookCard';
+import React from "react";
+import BookCard from "./BookCard";
 
 const BookList = ({ books }) => {
   if (!books.length) {
-    return <p className="text-center text-lg mt-8">No books found. Try another search!</p>;
+    return (
+      <p className="text-center text-lg mt-8 text-gray-600 dark:text-gray-300">
+        No books found. Try another search!
+      </p>
+    );
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6">
       {books.map((book) => (
         <BookCard key={book.key} book={book} />
       ))}

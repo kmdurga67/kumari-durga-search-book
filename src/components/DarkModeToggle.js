@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
       onClick={() => setIsDarkMode((prev) => !prev)}
       className="fixed top-4 right-4 p-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-white rounded"
     >
-      {isDarkMode ? "🌙 Dark Mode" : "☀️ Light  Mode"}
+      {isDarkMode ? "🌙" : "☀️"}
     </button>
   );
 };
