@@ -2,10 +2,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import DarkModeToggle from "./components/DarkModeToggle";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <div className="font-sans min-h-screen flex flex-col bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+      <Header />
       <DarkModeToggle />
       <main className="flex-grow">
         <Routes>
